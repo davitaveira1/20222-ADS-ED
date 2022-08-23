@@ -11,6 +11,7 @@ package Ex01;
 public class Vetor {
 
     Aluno[] aluno = new Aluno[100];
+    private int totalAlunos=0;
 
     public void adicionaV1(Aluno aluno) {
         //implementar
@@ -24,6 +25,15 @@ public class Vetor {
             }
 
         }
+    }
+    
+    public void adicionaV3(Aluno aluno) {
+        this.aluno[totalAlunos]=aluno;
+        totalAlunos++;
+    }    
+    
+    public void tamanhoVetor(){
+        System.out.println("Tamanho do vetor: "+totalAlunos);
     }
 
     public void imprimirV1() {
@@ -48,17 +58,13 @@ public class Vetor {
         Aluno a2 = new Aluno("daniel");
         Aluno a3 = new Aluno("lucas");
         Aluno a4 = new Aluno("joao");
-        vet.adicionaV2(a1);
-        vet.adicionaV2(a2);
-        vet.adicionaV2(a3);
-        vet.adicionaV2(a4);
+        vet.adicionaV3(a1);
+        vet.adicionaV3(a2);
+        vet.adicionaV3(a3);
+        vet.adicionaV3(a4);
         vet.imprimirV2();
-        /*
-        System.out.println("Nome: "+vet.aluno[2].getNome());
-        System.out.println("Nome: "+vet.aluno[4].getNome());
-        System.out.println("Nome: "+vet.aluno[5].getNome());
-         */
-        //vet.imprimirV1();
+        vet.tamanhoVetor();
+
 
     }
 
