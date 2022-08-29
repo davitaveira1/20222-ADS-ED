@@ -30,6 +30,14 @@ public class Vetor {
             i++;
         }
     }
+    
+    public boolean existe(Aluno a){
+        for(int i=0;i<totalAlunos;i++){
+            if(a.equals(aluno[i]))
+                return true;            
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         Vetor vet = new Vetor();
@@ -37,12 +45,17 @@ public class Vetor {
         Aluno a2 = new Aluno("daniel");
         Aluno a3 = new Aluno("lucas");
         Aluno a4 = new Aluno("joao");
+        System.out.println("===ADICIONAR===");
         vet.adicionar(a1);
         vet.adicionar(a2);
         vet.adicionar(a3);
-        vet.adicionar(a4);
+        //vet.adicionar(a4);
+        System.out.println("===IMPRIMIR===");        
         vet.imprimir();
+        System.out.println("===TAMANHO===");         
         vet.tamanhoVetor();
+        System.out.println("===VERIFICAR SE EXISTE===");
+        System.out.println(vet.existe(a4));
 
 
     }    
