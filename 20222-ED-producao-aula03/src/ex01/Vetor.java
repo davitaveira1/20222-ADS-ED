@@ -38,6 +38,17 @@ public class Vetor {
         }
         return false;
     }
+    
+    public Aluno buscarPorPosicao(int pos){
+        if(validarPosicao(pos))
+            return aluno[pos];
+        else
+            throw new IllegalArgumentException("Posição inválida!");        
+    }
+    
+    public boolean validarPosicao(int pos){
+        return pos >= 0 && pos <= totalAlunos-1;
+    }
 
     public static void main(String[] args) {
         Vetor vet = new Vetor();
@@ -56,6 +67,13 @@ public class Vetor {
         vet.tamanhoVetor();
         System.out.println("===VERIFICAR SE EXISTE===");
         System.out.println(vet.existe(a4));
+        System.out.println("===BUSCAR POR POS===");  
+        try {
+            System.out.println("Nome: "+vet.buscarPorPosicao(0).getNome());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: "+e.getMessage());
+        }
+        
 
 
     }    
