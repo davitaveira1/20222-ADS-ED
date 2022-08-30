@@ -4,6 +4,7 @@
  */
 package ex01;
 
+
 /**
  *
  * @author Davi
@@ -49,8 +50,22 @@ public class Vetor {
     public boolean validarPosicao(int pos){
         return pos >= 0 && pos <= totalAlunos-1;
     }
+    
+    public boolean validarPosicaoAdicionarPorPosicao(int pos){
+        return pos >= 0 && pos <= totalAlunos;
+    }
+    
+    public void adicionarPorPosicao(int pos,Aluno a){
+        for(int i=totalAlunos-1;i>=pos;i--){
+            aluno[i+1]=aluno[i];
+        }
+        aluno[pos]=a;
+        totalAlunos++;
+    }
+    
 
     public static void main(String[] args) {
+
         Vetor vet = new Vetor();
         Aluno a1 = new Aluno("davi");
         Aluno a2 = new Aluno("daniel");
@@ -73,7 +88,9 @@ public class Vetor {
         } catch (IllegalArgumentException e) {
             System.out.println("Erro: "+e.getMessage());
         }
-        
+        System.out.println("===ADICIONAR POR POS==="); 
+        vet.adicionarPorPosicao(2, a4);
+        vet.imprimir();
 
 
     }    
