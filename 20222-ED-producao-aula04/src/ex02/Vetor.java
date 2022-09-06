@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ex01;
+package ex02;
 
 
 /**
@@ -63,38 +63,14 @@ public class Vetor {
         totalAlunos++;
     }
     
-    
-    
-
-    public static void main(String[] args) {
-
-        Vetor vet = new Vetor();
-        Aluno a1 = new Aluno("davi");
-        Aluno a2 = new Aluno("daniel");
-        Aluno a3 = new Aluno("lucas");
-        Aluno a4 = new Aluno("joao");
-        System.out.println("===ADICIONAR===");
-        vet.adicionar(a1);
-        vet.adicionar(a2);
-        vet.adicionar(a3);
-        //vet.adicionar(a4);
-        System.out.println("===IMPRIMIR===");        
-        vet.imprimir();
-        System.out.println("===TAMANHO===");         
-        vet.tamanhoVetor();
-        System.out.println("===VERIFICAR SE EXISTE===");
-        System.out.println(vet.existe(a4));
-        System.out.println("===BUSCAR POR POS===");  
-        try {
-            System.out.println("Nome: "+vet.buscarPorPosicao(0).getNome());
-        } catch (IllegalArgumentException e) {
-            System.out.println("Erro: "+e.getMessage());
+    public void removerPorPosicao(int pos){
+        for(int i=pos;i<=totalAlunos-1;i++){
+            aluno[i]=aluno[i+1];
         }
-        System.out.println("===ADICIONAR POR POS==="); 
-        vet.adicionarPorPosicao(2, a4);
-        vet.imprimir();
-
-
+        totalAlunos--;
     }    
+    
+
+   
     
 }

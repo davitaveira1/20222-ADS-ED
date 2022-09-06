@@ -63,7 +63,12 @@ public class Vetor {
         totalAlunos++;
     }
     
-    
+    public void removerPorPosicao(int pos){
+        for(int i=pos;i<=totalAlunos-1;i++){
+            aluno[i]=aluno[i+1];
+        }
+        totalAlunos--;
+    }
     
 
     public static void main(String[] args) {
@@ -93,7 +98,9 @@ public class Vetor {
         System.out.println("===ADICIONAR POR POS==="); 
         vet.adicionarPorPosicao(2, a4);
         vet.imprimir();
-
+        System.out.println("===REMOVER POR POS===");  
+        vet.removerPorPosicao(0);
+        vet.imprimir();
 
     }    
     
