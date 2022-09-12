@@ -6,24 +6,22 @@ package ex03;
 
 import ex02.*;
 
-
 /**
  *
  * @author Davi
  */
 public class Vetor {
-    
-    Produto[] p = new Produto[100];
-    private int totalProdutos=0;
 
- 
+    Produto[] p = new Produto[100];
+    private int totalProdutos = 0;
+
     public void adicionar(Produto p) {
-        this.p[totalProdutos]=p;
+        this.p[totalProdutos] = p;
         totalProdutos++;
-    }    
-    
-    public void tamanhoVetor(){
-        System.out.println("Tamanho do vetor: "+totalProdutos);
+    }
+
+    public void tamanhoVetor() {
+        System.out.println("Tamanho do vetor: " + totalProdutos);
     }
 
     public void imprimir() {
@@ -33,46 +31,57 @@ public class Vetor {
             i++;
         }
     }
-    
-    public boolean existe(Produto prod){
-        for(int i=0;i<totalProdutos;i++){
-            if(prod.equals(this.p[i]))
-                return true;            
+
+    public boolean existe(Produto prod) {
+        for (int i = 0; i < totalProdutos; i++) {
+            if (prod.equals(this.p[i])) {
+                return true;
+            }
         }
         return false;
     }
-    
-    public Produto buscarPorPosicao(int pos){
-        if(validarPosicao(pos))
+
+    public boolean existeNome(String nome) {
+        for (int i = 0; i < totalProdutos; i++) {
+            if (p[i].getNome().equals(nome)) {
+                System.out.println("Nome existe no vetor!");
+                return true;
+            } 
+
+        }
+        System.out.println("Não encontrado!");
+        return false;
+    }
+
+    public Produto buscarPorPosicao(int pos) {
+        if (validarPosicao(pos)) {
             return p[pos];
-        else
-            throw new IllegalArgumentException("Posição inválida!");        
+        } else {
+            throw new IllegalArgumentException("Posição inválida!");
+        }
     }
-    
-    public boolean validarPosicao(int pos){
-        return pos >= 0 && pos <= totalProdutos-1;
+
+    public boolean validarPosicao(int pos) {
+        return pos >= 0 && pos <= totalProdutos - 1;
     }
-    
-    public boolean validarPosicaoAdicionarPorPosicao(int pos){
+
+    public boolean validarPosicaoAdicionarPorPosicao(int pos) {
         return pos >= 0 && pos <= totalProdutos;
     }
-    
-    public void adicionarPorPosicao(int pos,Produto prod){
-        for(int i=totalProdutos-1;i>=pos;i--){
-            p[i+1]=p[i];
+
+    public void adicionarPorPosicao(int pos, Produto prod) {
+        for (int i = totalProdutos - 1; i >= pos; i--) {
+            p[i + 1] = p[i];
         }
-        p[pos]=prod;
+        p[pos] = prod;
         totalProdutos++;
     }
-    
-    public void removerPorPosicao(int pos){
-        for(int i=pos;i<=totalProdutos-1;i++){
-            p[i]=p[i+1];
+
+    public void removerPorPosicao(int pos) {
+        for (int i = pos; i <= totalProdutos - 1; i++) {
+            p[i] = p[i + 1];
         }
         totalProdutos--;
-    }    
-    
+    }
 
-   
-    
 }
