@@ -46,7 +46,8 @@ public class Principal {
                 case 6:
                     System.out.print("Informe o nome do produto: ");
                     nome = entrada.next();  
-                    vet.existeNome(nome);
+                    //vet.existeNome(nome);
+                    vet.existeNomeInformaTipo(nome);
                     break;
                 case 7:
                     vet.imprimir();

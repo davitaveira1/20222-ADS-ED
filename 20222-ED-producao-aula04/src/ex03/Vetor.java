@@ -46,9 +46,27 @@ public class Vetor {
             if (p[i].getNome().equals(nome)) {
                 System.out.println("Nome existe no vetor!");
                 return true;
-            } 
+            }
 
         }
+        System.out.println("Não encontrado!");
+        return false;
+    }
+
+    public boolean existeNomeInformaTipo(String nome) {
+        
+        for (int i = 0; i < totalProdutos; i++) {
+            if (p[i].getNome() == nome) {
+                System.out.println("Nome vetor: " + p[i].getNome() + " Classe: " + p[i].getClass());
+                System.out.println("Nome parâmetro: " + nome + " Classe: " + nome.getClass());
+                System.out.println("Nome existe no vetor!");
+                return true;
+            }
+        System.out.println("Nome vetor: " + p[i].getNome() + " Classe: " + p[i].getClass());
+        System.out.println("Nome parâmetro: " + nome + " Classe: " + nome.getClass());
+
+        }
+
         System.out.println("Não encontrado!");
         return false;
     }
