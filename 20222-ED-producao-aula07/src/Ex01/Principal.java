@@ -14,10 +14,15 @@ public class Principal {
        ListaSimples lista = new ListaSimples();
        No no1 = new No(1);
        No no2 = new No(2);
+       No no3 = new No(3);
+       No no4 = new No(4);
        
        lista.inserirNoFinal(no1);
        lista.inserirNoFinal(no2);
+       lista.inserirNoFinal(no3);
+       lista.inserirNoInicio(no4);
        lista.imprimir();
+       //4,1,2,3
     }
     
 }

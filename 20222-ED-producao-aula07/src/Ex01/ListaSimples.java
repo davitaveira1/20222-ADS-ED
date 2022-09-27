@@ -13,14 +13,25 @@ public class ListaSimples {
     No primeiro=null;
     No ultimo=null;
     
-    void inserirNoFinal(No valorNo){
+    void inserirNoFinal(No novoNo){
         
         if(primeiro==null){
-            primeiro=valorNo;
+            primeiro=novoNo;
         }else{
-            ultimo.prox=valorNo;            
+            ultimo.prox=novoNo;            
         }
-        ultimo=valorNo;        
+        ultimo=novoNo;        
+    }
+    
+    void inserirNoInicio(No novoNo){
+        
+        if(primeiro==null){
+            primeiro=novoNo;
+            ultimo=novoNo;
+        }else{
+            novoNo.prox=primeiro;
+            primeiro=novoNo;
+        }
     }
     
     void imprimir(){
