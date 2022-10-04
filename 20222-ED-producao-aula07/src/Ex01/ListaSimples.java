@@ -82,6 +82,21 @@ public class ListaSimples {
         
     }
     
+    public void removerNoInicio(){
+        if(primeiro==null){
+            System.out.println("Lista vazia!");
+        }else{
+            if(contarNos()==1){
+                primeiro=null;
+                ultimo=null;
+            }else{
+                No aux=primeiro;
+                primeiro=aux.prox;
+                aux.prox=null;
+            }
+        }
+    }
+    
     
     
     

@@ -26,12 +26,11 @@ public class Principal {
 
         System.out.println("Qtd nós: " + lista.contarNos());
         lista.removerNoFinal();
-        lista.removerNoFinal();
-        lista.removerNoFinal();
-        lista.removerNoFinal();        
-
+        //4,1,2
+        lista.removerNoInicio();
+        //1,2    
         lista.imprimir();
-        //Lista vazia!
+
     }
 
 }
